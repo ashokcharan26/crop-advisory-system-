@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simple crop advisory prototype for farmers.">
+  <title>GreenGuide — Crop Advisory</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="GreenGuide home">🌱 GreenGuide</a>
+    <nav><a href="#advice">Crop advice</a><a href="#disease">Plant health</a><a href="#about">About</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">AI-ASSISTED FARMING PROTOTYPE</p>
+      <h1>Grow with better<br><span>information.</span></h1>
+      <p class="hero-copy">Explore starter crop suggestions and practical farming guidance for your conditions.</p>
+      <a class="primary-link" href="#advice">Get crop advice <span aria-hidden="true">→</span></a>
+      <p class="notice">Prototype only: recommendations are educational examples, not a substitute for local agricultural advice.</p>
+    </section>
+
+    <section class="panel" id="advice">
+      <div class="section-heading">
+        <div><p class="eyebrow">01 / YOUR FARM</p><h2>Find a crop to explore</h2></div>
+        <p>Choose the details below to view sample suggestions.</p>
+      </div>
+      <form id="advice-form">
+        <div class="form-grid">
+          <label>Soil type
+            <select id="soil" required>
+              <option value="">Choose soil</option>
+              <option value="black">Black soil</option>
+              <option value="red">Red soil</option>
+              <option value="alluvial">Alluvial soil</option>
+              <option value="sandy">Sandy soil</option>
+            </select>
+          </label>
+          <label>Growing season
+            <select id="season" required>
+              <option value="">Choose season</option>
+              <option value="kharif">Kharif (monsoon)</option>
+              <option value="rabi">Rabi (winter)</option>
+              <option value="summer">Summer</option>
+            </select>
+          </label>
+          <label>Farm location (optional)
+            <input id="location" type="text" maxlength="80" placeholder="e.g., Rajkot, Gujarat">
+          </label>
+          <label>Water availability
+            <select id="water" required>
+              <option value="">Choose availability</option>
+              <option value="low">Limited</option>
+              <option value="medium">Moderate</option>
+              <option value="high">Good irrigation</option>
+            </select>
+          </label>
+        </div>
+        <button class="button" type="submit">Show sample advice</button>
+      </form>
+      <div id="advice-result" class="result" aria-live="polite" hidden></div>
+    </section>
+
+    <section class="two-column">
+      <article class="panel" id="disease">
+        <p class="eyebrow">02 / PLANT HEALTH</p>
+        <h2>Crop health guidance</h2>
+        <p>Choose a concern to see safe first steps. This tool cannot identify a disease without expert assessment.</p>
+        <label>What have you noticed?
+          <select id="symptom">
+            <option value="">Choose a concern</option>
+            <option value="spots">Spots or patches on leaves</option>
+            <option value="yellow">Yellowing leaves</option>
+            <option value="wilting">Wilting plants</option>
+            <option value="insects">Visible insects</option>
+          </select>
+        </label>
+        <button id="health-button" class="button button-secondary" type="button">View guidance</button>
+        <div id="health-result" class="result" aria-live="polite" hidden></div>
+      </article>
+
+      <article class="panel chat-panel">
+        <p class="eyebrow">03 / FARMER HELPER</p>
+        <h2>Ask the farming helper</h2>
+        <p>This demo answers a few common questions locally. It does not call an external AI service.</p>
+        <form id="chat-form">
+          <label for="question">Your question</label>
+          <textarea id="question" rows="3" maxlength="500" placeholder="e.g., How can I conserve water?" required></textarea>
+          <button class="button" type="submit">Ask helper</button>
+        </form>
+        <div id="chat-result" class="result" aria-live="polite" hidden></div>
+      </article>
+    </section>
+
+    <section class="panel" id="about">
+      <p class="eyebrow">ABOUT THIS PROJECT</p>
+      <h2>Simple advice, clear limits</h2>
+      <p>GreenGuide is a student project prototype. Crop suitability depends on local climate, soil testing, seed variety, irrigation, and current conditions. Confirm decisions with your local agriculture department or qualified extension worker.</p>
+    </section>
+  </main>
+
+  <footer><span>🌱 GreenGuide Crop Advisory</span><span>Student prototype · Sample data</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
